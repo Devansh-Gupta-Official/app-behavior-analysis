@@ -46,3 +46,64 @@ Based on the histogram analysis, the 'enrolled' column is modified to set a time
 - It involves creating binary columns for each top screen, checking if the screen appears in the 'screen_list', and counting any remaining screens as 'Other'.
 - **Funnel analysis** is applied to group related screens ('Saving' screens) into a single column named 'SavingCount' to avoid correlation between individual screens.
 
+## Step 6: Saving the Model:
+- The updated dataframe is saved to new_data.csv using the to_csv function.
+
+## Step 7: Data Preprocessing and Feature Engineering:
+1. Data Loading:
+
+The initial step typically involves loading the dataset into memory. This could be from a CSV file, a database, or any other data source. For instance:
+```
+import pandas as pd
+data = pd.read_csv('new_data.csv')
+```
+
+2. Feature Engineering:
+   
+Converting categorical variables to numerical using techniques like one-hot encoding or label encoding.
+
+## Step 8: Model Training:
+1. Data Splitting:
+   
+The dataset is divided into predictor variables (X) and the target variable ('enrolled').
+```
+X = df.drop('enrolled', axis=1)
+y = df['enrolled']
+```
+
+2. Model Instantiation and Training:
+   
+- Choosing a Model: In this case, Logistic Regression is chosen. Other models could be utilized based on the problem type (classification/regression) and data characteristics.
+- Splitting Data for Training and Testing
+- Training the Model
+
+3. Model Prediction:
+   
+After training, the model can be used to predict on the test data.
+
+## Step 9: Evaluation Metrics:
+1. Calculating evaluation metrics such as accuracy, precision, recall, and F1-score using functions from the sklearn.metrics module.
+```
+from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score
+accuracy = accuracy_score(y_test, predictions)
+precision = precision_score(y_test, predictions)
+recall = recall_score(y_test, predictions)
+f1 = f1_score(y_test, predictions)
+```
+2. Creating a confusion matrix.
+
+![image](https://github.com/Devansh-Gupta-Official/app-behavior-analysis/assets/100591612/416ab555-b82b-4ccc-abf5-32f6cfb93a46)
+
+
+## Step 10: K-Fold Cross-Validation:
+Utilizing k-fold cross-validation to evaluate model performance using the cross_val_score function from sklearn.model_selection.
+```
+from sklearn.model_selection import cross_val_score
+accuracies = cross_val_score(estimator=classifier, X=X_train, y=y_train, cv=10)
+```
+
+## Step 11: Results Interpretation:
+- Displaying and interpreting the evaluation metrics, cross-validation scores, and potentially feature importance scores.\
+- Creating a dataframe with these three columns:
+
+![image](https://github.com/Devansh-Gupta-Official/app-behavior-analysis/assets/100591612/642ab220-1bc8-47b7-a2d5-4806053aa707)
