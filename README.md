@@ -50,22 +50,16 @@ Based on the histogram analysis, the 'enrolled' column is modified to set a time
 - The updated dataframe is saved to new_data.csv using the to_csv function.
 
 ## Step 7: Data Preprocessing and Feature Engineering:
-1. Data Loading:
-
-The initial step typically involves loading the dataset into memory. This could be from a CSV file, a database, or any other data source. For instance:
+1. Data Loading: The initial step typically involves loading the dataset into memory. This could be from a CSV file, a database, or any other data source. For instance:
 ```
 import pandas as pd
 data = pd.read_csv('new_data.csv')
 ```
 
-2. Feature Engineering:
-   
-Converting categorical variables to numerical using techniques like one-hot encoding or label encoding.
+2. Feature Engineering: Converting categorical variables to numerical using techniques like one-hot encoding or label encoding.
 
 ## Step 8: Model Training:
-1. Data Splitting:
-   
-The dataset is divided into predictor variables (X) and the target variable ('enrolled').
+1. Data Splitting: The dataset is divided into predictor variables (X) and the target variable ('enrolled').
 ```
 X = df.drop('enrolled', axis=1)
 y = df['enrolled']
@@ -77,9 +71,7 @@ y = df['enrolled']
 - Splitting Data for Training and Testing
 - Training the Model
 
-3. Model Prediction:
-   
-After training, the model can be used to predict on the test data.
+3. Model Prediction: After training, the model can be used to predict on the test data.
 
 ## Step 9: Evaluation Metrics:
 1. Calculating evaluation metrics such as accuracy, precision, recall, and F1-score using functions from the sklearn.metrics module.
