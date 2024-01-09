@@ -3,6 +3,13 @@
 ## Overview
 This repository contains code for analyzing user behavior within a mobile app. The primary focus is on understanding user interactions and their correlation with enrollment in the app.
 
+## Introduction
+Often, some companies provide free products/services in an attempt to transition their customers to a paid membership. Since marketing efforts are never free, these companies need to know exactly who to target with offers and promotions.
+
+## Business Challenge
+- In this project, we will work with a company (hypothetical) that will allow customers to track all of their finances in one place.
+- The company has tasked us to identify which users will most likely NOT enroll in the paid product. Because of marketing costs, the company does not want to offer them to everyone espacially customers who were going to enroll anyways.
+
 ## Dataset
 The analysis uses the appdata10.csv dataset, consisting of various user attributes and their activities within the app. The data are manufactured fields based on trends found in real world case studies. The fields describe what companies usually track from their users, and the data is based on observed distributions.
 
